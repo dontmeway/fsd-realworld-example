@@ -28,8 +28,8 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ## Useful Links
-[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-[React documentation](https://reactjs.org/).
-[FSD - Feature Sliced Design](https://feature-sliced.design/)
-[State Manager - Effector](https://effector.dev/)
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) \
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started). \
+[React documentation](https://reactjs.org/). \
+[FSD - Feature Sliced Design](https://feature-sliced.design/) \
+[State Manager - Effector](https://effector.dev/) 

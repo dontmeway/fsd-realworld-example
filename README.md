@@ -1,7 +1,5 @@
 # Getting Started with MedHub Boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## ENV variables
 
 In the project directory, you can view ENV variables in `.env-cmdrc.js` file
@@ -17,6 +15,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `yarn preview:prod`
+Runs the app in production mode for preview.\
+Open [http://localhost:4173](http://localhost:4173) to view it in the browser.
 
 ### `yarn build:dev`
 ### `yarn build:prod`

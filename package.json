@@ -38,6 +38,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^4.2.2",
     "@types/compose-function": "^0.0.30",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",

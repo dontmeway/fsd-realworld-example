@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "before:init": ["yarn run lint", "yarn test"]
+  },
+  "git": {
+    "commitMessage": "chore: release v${version}"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release ${version}"
+  },
+  "npm": {
+    "publish": false 
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "conventionalcommits",
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog",
+      "types": [
+        {"type": "feat", "section": "Features"},
+        {"type": "fix", "section": "Bug Fixes"},
+        {"type": "docs", "hidden": "Documentation"},
+        {"type": "refactor", "hidden": "Refactoring"},
+        {"type": "chore", "hidden": true},
+        {"type": "style", "hidden": true},
+        {"type": "perf", "hidden": true},
+        {"type": "test", "hidden": true}
+      ]
+    }
+  }
+}

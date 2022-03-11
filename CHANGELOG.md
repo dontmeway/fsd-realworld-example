@@ -1,5 +1,7 @@
 # Changelog
 
+### [0.2.1](https://github.com/MedHub-Systems/frontend-boilerplate/compare/0.2.0...0.2.1) (2022-03-11)
+
 ## [0.2.0](https://github.com/MedHub-Systems/frontend-boilerplate/compare/0.1.0...0.2.0) (2022-03-11)
 
 

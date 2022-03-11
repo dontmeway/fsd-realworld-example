@@ -38,9 +38,12 @@ Launches the linter for check and fix project code with eslint/prettier rules.\
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn release`
+Bump project version, generates changelog by convention commit.\
+Launches lint/test hooks and push changes to origin with release tag.\
 ## Useful Links
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) \
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started). \
+[Vite Docs](https://vitejs.dev/). \
 [React documentation](https://reactjs.org/). \
 [FSD - Feature Sliced Design](https://feature-sliced.design/) \
 [State Manager - Effector](https://effector.dev/) 

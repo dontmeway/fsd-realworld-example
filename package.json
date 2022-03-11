@@ -1,6 +1,6 @@
 {
   "name": "medhub-boilerplate",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "start": "env-cmd -e dev vite",

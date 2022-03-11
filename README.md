@@ -20,9 +20,7 @@ You will also see any lint errors in the console.
 Runs the app in production mode for preview.\
 Open [http://localhost:4173](http://localhost:4173) to view it in the browser.
 
-### `yarn build:dev`
-### `yarn build:prod`
-
+### `yarn build:dev` | `yarn build:prod`
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
@@ -31,7 +29,7 @@ Your app is ready to be deployed!
 
 ### `yarn lint`
 
-Launches the linter for check and fix project code with eslint/prettier rules.\
+Launches the linter for check and fix project code with eslint/prettier rules.
 
 ### `yarn test`
 
@@ -39,8 +37,9 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn release`
-Bump project version, generates changelog by convention commit.\
-Launches lint/test hooks and push changes to origin with release tag.\
+Bump project version, generates changelog by Conventional commits.\
+Launches lint/test hooks and push changes to origin with release tag.
+
 ## Useful Links
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) \
 [Vite Docs](https://vitejs.dev/). \

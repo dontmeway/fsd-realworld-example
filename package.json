@@ -8,7 +8,7 @@
     "build:dev": "env-cmd -e dev tsc && vite build",
     "build:prod": "env-cmd -e prod tsc && vite build",
     "preview:prod": "env-cmd -e prod vite preview",
-    "release": "release-it",
+    "release": "release-it --only-version",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "lint": "tsc --noEmit && eslint 'src/**/*.ts{,x}' --fix",
     "test": "vite-jest --no-cache"

@@ -8,6 +8,7 @@
     "build:dev": "env-cmd -e dev tsc && vite build",
     "build:prod": "env-cmd -e prod tsc && vite build",
     "preview:prod": "env-cmd -e prod vite preview",
+    "release": "release-it",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "lint": "tsc --noEmit && eslint 'src/**/*.ts{,x}' --fix",
     "test": "vite-jest --no-cache"
@@ -49,6 +50,7 @@
     "eslint-plugin-effector": "^0.6.0",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
+    "release-it": "^14.12.5",
     "source-map-explorer": "^2.5.2",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.7.0",

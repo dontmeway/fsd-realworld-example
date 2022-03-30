@@ -1,11 +1,9 @@
+import { Routing } from '@pages/index'
+
 import { withProviders } from './providers'
 
 function App() {
-  return (
-    <div>
-      <p>MedHub Boilerplate</p>
-    </div>
-  )
+  return <Routing />
 }
 
 export default withProviders(App)

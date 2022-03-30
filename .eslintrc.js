@@ -22,6 +22,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
     'prettier/prettier': [
       'error',
       {

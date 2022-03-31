@@ -1,1 +1,1 @@
-export { signInFormSchema } from './sign-in'
+export { signInFormSchema, signUpFormSchema } from './sign-in'

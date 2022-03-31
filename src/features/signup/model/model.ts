@@ -1,13 +1,13 @@
 import { createEvent, sample } from 'effector'
 
-import { userModel } from '@entities/user'
 import type * as types from '@shared/api'
+import { userModel } from '@entities/user'
 
-const formSubmitted = createEvent<types.LoginRequest>()
+const formSubmitted = createEvent<types.RegisterRequest>()
 
 sample({
   clock: formSubmitted,
-  target: userModel.loginRequestFx,
+  target: userModel.registerRequestFx,
 })
 
 export { formSubmitted }

@@ -1,12 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Box, Flex, Text } from '@chakra-ui/react'
-import { Link as RouterLink } from 'atomic-router-react'
-
-import * as routes from '@shared/routes'
+import { Box, Flex } from '@chakra-ui/react'
 
 import { Logo } from '../logo'
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC = ({ children }) => {
   return (
     <Box pos="sticky" top="0" boxShadow="0px 5px 4px -2px rgba(0,0,0,0.2)">
       <Flex
@@ -18,26 +15,8 @@ export const Navbar: React.FC = () => {
         m="auto"
       >
         <Logo />
-        <Box>
-          <RouterLink to={routes.homeRoute}>
-            <Link>Home</Link>
-          </RouterLink>
-          <RouterLink to={routes.signInRoute}>
-            <Link>Sign in</Link>
-          </RouterLink>
-          <RouterLink to={routes.signUpRoute}>
-            <Link>Sign up</Link>
-          </RouterLink>
-        </Box>
+        {children}
       </Flex>
     </Box>
-  )
-}
-
-const Link: React.FC = ({ children }) => {
-  return (
-    <Text d="inline" fontSize="16px" mx="15px">
-      {children}
-    </Text>
   )
 }

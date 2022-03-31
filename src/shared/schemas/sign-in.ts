@@ -11,3 +11,13 @@ export const signInFormSchema = yup.object().shape({
     .transform((v) => v.trim())
     .required('Required field'),
 })
+
+export const signUpFormSchema = yup
+  .object()
+  .shape({
+    username: yup
+      .string()
+      .transform((v) => v.trim())
+      .required('Required field'),
+  })
+  .concat(signInFormSchema)

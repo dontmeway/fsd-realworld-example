@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.realworld.io/api'
 export type Request = {
   path: string
   method: string
-  headers?: Record<string, any>
+  headers?: Record<string, string>
   body?: Record<string, any>
 }
 
@@ -15,8 +15,13 @@ export type Answer<T = unknown> = {
   body: T
 }
 
-async function request({ method, path, headers, ...params }: Request) {
+async function request({ method, path, ...params }: Request) {
   const body = params.body ? JSON.stringify(params.body) : undefined
+  const headers = {
+    Accept: 'application/json, text/plain, */*',
+    'Content-Type': 'application/json',
+    ...(params.headers || {}),
+  }
 
   const response = await fetch(`${BASE_URL}/${path}`, { method, headers, body })
   const answer = await response.json()

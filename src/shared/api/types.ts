@@ -1,6 +1,6 @@
-import * as typed from 'runtypes'
+import * as typed from 'typed-contracts'
 
-import * as contract from './contracts'
+import * as contracts from './contracts'
 
 export type LoginRequest = {
   email: string
@@ -13,12 +13,22 @@ export type RegisterRequest = {
   password: string
 }
 
-export type LoginRequestDone = typed.Static<typeof contract.loginRequestOk>
-export type LoginRequestFail = typed.Static<typeof contract.loginRequestFail>
+export type LoginRequestDone = {
+  status: 'ok'
+  answer: typed.Get<typeof contracts.loginRequestOk>
+}
+export type LoginRequestFail = {
+  status: 'bad_request'
+  error: typed.Get<typeof contracts.loginRequestBadRequest>
+}
 
-export type RegisterRequestDone = typed.Static<
-  typeof contract.registerRequestOk
->
-export type UserRequestDone = typed.Static<typeof contract.userRequestOk>
+export type RegisterRequestDone = {
+  status: 'ok'
+  answer: typed.Get<typeof contracts.registerRequestOk>
+}
+export type UserRequestDone = {
+  status: 'ok'
+  answer: typed.Get<typeof contracts.userRequestOk>
+}
 
-export type User = typed.Static<typeof contract.user>
+export type User = typed.Get<typeof contracts.user>

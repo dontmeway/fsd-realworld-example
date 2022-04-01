@@ -24,14 +24,14 @@ export const routes = [
     path: '/signup',
     route: signUpRoute,
   },
-  // {
-  //   path: '/editor',
-  //   view: createArticleRoute,
-  // },
-  // {
-  //   path: '/editor/:articleSlug',
-  //   route: editArticleRoute,
-  // },
+  {
+    path: '/editor',
+    route: createArticleRoute,
+  },
+  {
+    path: '/editor/:articleSlug',
+    route: editArticleRoute,
+  },
   {
     path: '/settings',
     route: settingsRoute,

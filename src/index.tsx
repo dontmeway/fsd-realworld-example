@@ -9,7 +9,7 @@ import { getTokenFx } from '@shared/api'
 sample({
   clock: getTokenFx.doneData,
   filter: Boolean,
-  target: userModel.userRequestFx,
+  target: userModel.userFx,
 })
 
 getTokenFx()

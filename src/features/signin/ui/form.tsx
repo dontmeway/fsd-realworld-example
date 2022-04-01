@@ -39,8 +39,13 @@ export const Form = () => {
       <Button type="submit" w="100%" colorScheme="whatsapp">
         Sign in
       </Button>
-      <Button type="button" w="100%" colorScheme="whatsapp">
-        Developer&aposs button
+      <Button
+        onClick={() => model.formSubmitted({ email: '1@a.com', password: '1' })}
+        type="button"
+        w="100%"
+        colorScheme="whatsapp"
+      >
+        Developer&apos;s button
       </Button>
     </Stack>
   )

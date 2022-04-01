@@ -12,6 +12,7 @@ export type Request = {
 export type Answer<T = unknown> = {
   status: number
   body: T
+  ok: boolean
 }
 
 async function request({ method, path, ...params }: Request) {
@@ -28,6 +29,7 @@ async function request({ method, path, ...params }: Request) {
   const responder = {
     status: response.status,
     body: answer,
+    ok: response.ok,
   }
 
   if (response.ok) {

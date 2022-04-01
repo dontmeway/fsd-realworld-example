@@ -37,7 +37,7 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.29.0",
     "react-icons": "^4.3.1",
-    "runtypes": "^6.5.1",
+    "typed-contracts": "^3.0.0",
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "web-vitals": "^2.1.4",

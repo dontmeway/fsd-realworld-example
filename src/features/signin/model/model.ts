@@ -2,27 +2,30 @@ import { createEvent, sample } from 'effector'
 
 import { userModel } from '@entities/user'
 import * as routes from '@shared/routes'
-import type * as types from '@shared/api'
 
-const errors: Record<number, string> = {
-  403: 'Invalid email or password',
+import type * as types from '@shared/api'
+import { errorToast } from '@shared/lib/toast'
+
+const errors: Record<string, string> = {
+  bad_request: 'Invalid email or password',
 }
 
 const formSubmitted = createEvent<types.LoginRequest>()
 
 sample({
   clock: formSubmitted,
-  target: userModel.loginRequestFx,
+  target: userModel.loginFx,
 })
 
 sample({
-  clock: userModel.loginRequestFx.doneData,
+  clock: userModel.loginFx.doneData,
   target: routes.homeRoute.open,
 })
 
-// sample({
-//   clock: userModel.loginRequestFx.failData,
-//   fn: (res) => res.
-// })
+sample({
+  clock: userModel.loginFx.failData,
+  fn: (res) => errors[res.status] || 'Unexpected error',
+  target: errorToast,
+})
 
 export { formSubmitted }

@@ -6450,11 +6450,6 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-runtypes@^6.5.1:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/runtypes/-/runtypes-6.5.1.tgz#125d9a50c3b7dd45db6e47d42bb1c411b4f3f008"
-  integrity sha512-vYxcAYzC868ZY4BgazBomT9dpWHZnG3CH++5mhlVKGKqf2MzON4itmEmQt3uGTUOyipeUn7GALAN0nQhjPNRtA==
-
 rxjs@^7.2.0:
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.5.5.tgz#2ebad89af0f560f460ad5cc4213219e1f7dd4e9f"
@@ -7098,6 +7093,11 @@ type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+
+typed-contracts@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/typed-contracts/-/typed-contracts-3.0.0.tgz#a1e5f8b06b35c4fdee3635e1097b93febaf07a16"
+  integrity sha512-Crw4cKiPBulqy2YFfCMU3OaudtDPeEDwbkbYj6mI2XZA2wt3iGBvxvMobESW9t73+hlIpwe/4i63M+BzkprW+g==
 
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"

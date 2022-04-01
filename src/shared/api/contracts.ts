@@ -1,26 +1,20 @@
-import * as typed from 'runtypes'
+import * as typed from 'typed-contracts'
 
-export const user = typed.Record({
-  email: typed.String,
-  username: typed.String,
-  image: typed.String,
-  token: typed.String,
-  bio: typed.Union(typed.Null, typed.Unknown),
+export const user = typed.object({
+  email: typed.string,
+  username: typed.string,
+  image: typed.string,
+  token: typed.string,
+  bio: typed.union(typed.nul, typed.string),
 })
 
-export const loginRequestOk = typed.Record({
-  body: typed.Record({
-    user,
-  }),
-  status: typed.Number,
+export const loginRequestOk = typed.object({
+  user,
 })
 
-export const loginRequestFail = typed.Record({
-  status: typed.Number,
-  body: typed.Record({
-    errors: typed.Record({
-      'email or password': typed.Array(typed.String),
-    }),
+export const loginRequestBadRequest = typed.object({
+  errors: typed.object({
+    'email or password': typed.array(typed.string),
   }),
 })
 

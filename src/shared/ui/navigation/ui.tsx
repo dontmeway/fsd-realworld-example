@@ -40,7 +40,7 @@ const Links = ({ isAuth, user }: Props) => {
       <RouterLink
         className="navbar-link"
         activeClassName="navbar-active-link"
-        to={routes.signInRoute}
+        to={routes.createArticleRoute}
       >
         <Link>
           <Icon mr="10px" as={FaEdit} /> New article

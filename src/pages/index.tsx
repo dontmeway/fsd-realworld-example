@@ -10,6 +10,7 @@ import { SignInPage } from './signin'
 import { SignUpPage } from './signup'
 import { ProfilePage } from './profile'
 import { SettingsPage } from './settings'
+import { CreateArticlePage } from './editor'
 
 export const Routing = () => {
   return (
@@ -23,6 +24,7 @@ const PrivateRoutes = () => {
   return (
     <>
       <Route view={HomePage} route={routes.homeRoute} />
+      <Route view={CreateArticlePage} route={routes.createArticleRoute} />
       <Route view={SettingsPage} route={routes.settingsRoute} />
       <Route view={ProfilePage} route={routes.profileRoute} />
     </>

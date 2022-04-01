@@ -8,16 +8,12 @@ const formSubmitted = createEvent<types.RegisterRequest>()
 
 sample({
   clock: formSubmitted,
-  target: userModel.registerRequestFx,
+  target: userModel.registerFx,
 })
 
 sample({
-  clock: userModel.registerRequestFx.doneData,
+  clock: userModel.registerFx.doneData,
   target: routes.homeRoute.open,
 })
-
-// sample({
-//   clock: userModel.
-// })
 
 export { formSubmitted }

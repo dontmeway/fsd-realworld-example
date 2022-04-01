@@ -9,7 +9,19 @@ export const user = typed.Record({
 })
 
 export const loginRequestOk = typed.Record({
-  user,
+  body: typed.Record({
+    user,
+  }),
+  status: typed.Number,
+})
+
+export const loginRequestFail = typed.Record({
+  status: typed.Number,
+  body: typed.Record({
+    errors: typed.Record({
+      'email or password': typed.Array(typed.String),
+    }),
+  }),
 })
 
 export const registerRequestOk = loginRequestOk

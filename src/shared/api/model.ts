@@ -45,7 +45,7 @@ sample({
 sample({
   clock: authentificatedRequestFx.failData,
   filter: (response) => response.status === 401,
-  target: routes.homeRoute.navigate.prepend(() => ({ params: {}, query: {} })),
+  target: routes.homeRoute.open,
 })
 
 export { unathentificatedRequestFx, authentificatedRequestFx, getTokenFx }

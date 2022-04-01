@@ -14,6 +14,8 @@ export type RegisterRequest = {
 }
 
 export type LoginRequestDone = typed.Static<typeof contract.loginRequestOk>
+export type LoginRequestFail = typed.Static<typeof contract.loginRequestFail>
+
 export type RegisterRequestDone = typed.Static<
   typeof contract.registerRequestOk
 >

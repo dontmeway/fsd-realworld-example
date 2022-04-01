@@ -13,12 +13,12 @@ export const $isAuthorized = $user.map(Boolean)
 export const $isLoading = userRequestFx.pending
 
 $user
-  .on(loginRequestFx.doneData, (_, payload) => payload.user)
-  .on(registerRequestFx.doneData, (_, payload) => payload.user)
-  .on(userRequestFx.doneData, (_, payload) => payload.user)
+  .on(loginRequestFx.doneData, (_, { body }) => body.user)
+  .on(registerRequestFx.doneData, (_, { body }) => body.user)
+  .on(userRequestFx.doneData, (_, { body }) => body.user)
 
 sample({
   clock: [loginRequestFx.doneData, registerRequestFx.doneData],
-  fn: (response) => response.user.token,
+  fn: ({ body }) => body.user.token,
   target: api.tokenChanged,
 })

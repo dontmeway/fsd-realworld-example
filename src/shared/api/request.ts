@@ -6,7 +6,14 @@ import { authentificatedRequestFx, unathentificatedRequestFx } from './model'
 import * as contract from './contracts'
 import * as types from './types'
 
-function responseGuard<T>(runtype: RuntypeBase<T>, response: unknown): T {
+function responseGuard<T>(
+  runtypes: Record<number, RuntypeBase<T>>,
+  response: { body: unknown; status: number }
+): T {
+  const runtype = runtypes[response.status]
+
+  if (!runtype) throw response
+
   if (runtype.guard(response)) {
     return response
   }
@@ -24,7 +31,8 @@ export const loginRequestFx = createEffect<
       method: 'POST',
       body: { user: params },
     })
-    return responseGuard(contract.loginRequestOk, response.body)
+
+    return responseGuard({ 200: contract.loginRequestOk }, response)
   },
 })
 
@@ -39,7 +47,7 @@ export const registerRequestFx = createEffect<
       body: { user: params },
     })
 
-    return responseGuard(contract.registerRequestOk, response.body)
+    return responseGuard({ 200: contract.registerRequestOk }, response)
   },
 })
 
@@ -50,6 +58,6 @@ export const userRequestFx = createEffect<void, types.UserRequestDone>({
       method: 'GET',
     })
 
-    return responseGuard(contract.userRequestOk, response.body)
+    return responseGuard({ 200: contract.userRequestOk }, response)
   },
 })

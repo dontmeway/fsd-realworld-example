@@ -10,7 +10,6 @@ export type Request = {
 }
 
 export type Answer<T = unknown> = {
-  ok: boolean
   status: number
   body: T
 }
@@ -28,7 +27,6 @@ async function request({ method, path, ...params }: Request) {
 
   const responder = {
     status: response.status,
-    ok: response.ok,
     body: answer,
   }
 

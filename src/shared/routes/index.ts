@@ -3,7 +3,8 @@ import { createRoute } from 'atomic-router'
 export const homeRoute = createRoute()
 export const signInRoute = createRoute()
 export const signUpRoute = createRoute()
-export const editorRoute = createRoute<{ slug: string }>()
+export const createArticleRoute = createRoute()
+export const editArticleRoute = createRoute<{ articleSlug: string }>()
 export const settingsRoute = createRoute()
 export const articleRoute = createRoute<{ slug: string }>()
 export const profileRoute = createRoute()
@@ -22,6 +23,18 @@ export const routes = [
   {
     path: '/signup',
     route: signUpRoute,
+  },
+  // {
+  //   path: '/editor',
+  //   view: createArticleRoute,
+  // },
+  // {
+  //   path: '/editor/:articleSlug',
+  //   route: editArticleRoute,
+  // },
+  {
+    path: '/settings',
+    route: settingsRoute,
   },
   {
     path: '/profile/:slug*',

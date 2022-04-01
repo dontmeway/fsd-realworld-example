@@ -7,12 +7,14 @@ import {
   sample,
 } from 'effector'
 
+import * as routes from '@shared/routes'
+
 import { requestInternalFx, Answer, Request } from './init'
 
 export const tokenChanged = createEvent<string | null>()
 
 const setTokenFx = createEffect(setToken)
-export const getTokenFx = createEffect(getToken)
+const getTokenFx = createEffect(getToken)
 
 const $token = createStore<null | string>(null)
 
@@ -28,6 +30,7 @@ const authentificatedRequestFx: Effect<
   }),
   effect: requestInternalFx,
 })
+
 const unathentificatedRequestFx = attach({ effect: requestInternalFx })
 
 $token
@@ -39,7 +42,13 @@ sample({
   target: setTokenFx,
 })
 
-export { unathentificatedRequestFx, authentificatedRequestFx }
+sample({
+  clock: authentificatedRequestFx.failData,
+  filter: (response) => response.status === 401,
+  target: routes.homeRoute.navigate.prepend(() => ({ params: {}, query: {} })),
+})
+
+export { unathentificatedRequestFx, authentificatedRequestFx, getTokenFx }
 
 function setAuthorizationHeader(token: null | string) {
   return token ? { headers: { Authorization: `Bearer ${token}` } } : {}

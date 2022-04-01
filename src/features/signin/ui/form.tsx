@@ -39,6 +39,9 @@ export const Form = () => {
       <Button type="submit" w="100%" colorScheme="whatsapp">
         Sign in
       </Button>
+      <Button type="button" w="100%" colorScheme="whatsapp">
+        Developer&aposs button
+      </Button>
     </Stack>
   )
 }

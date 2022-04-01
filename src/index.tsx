@@ -1,9 +1,16 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
+import { sample } from 'effector'
 
 import App from '@app/index'
+import { userModel } from '@entities/user'
 import { getTokenFx } from '@shared/api'
-// import reportWebVitals from './reportWebVitals';
+
+sample({
+  clock: getTokenFx.doneData,
+  filter: Boolean,
+  target: userModel.userRequestFx,
+})
 
 getTokenFx()
 
@@ -13,5 +20,3 @@ ReactDOM.render(
   </StrictMode>,
   document.getElementById('root')
 )
-
-// reportWebVitals(console.log);

@@ -2,7 +2,7 @@ export {
   loginRequestFx,
   registerRequestFx,
   $isAuthorized,
-  appStarted,
   $isLoading,
   $user,
+  userRequestFx,
 } from './model'

@@ -49,7 +49,7 @@ const Links = ({ isAuth, user }: Props) => {
       <RouterLink
         className="navbar-link"
         activeClassName="navbar-active-link"
-        to={routes.signUpRoute}
+        to={routes.settingsRoute}
       >
         <Link>
           <Icon mr="10px" as={IoIosSettings} /> Settings

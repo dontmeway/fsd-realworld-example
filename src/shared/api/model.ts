@@ -7,10 +7,11 @@ import {
   sample,
 } from 'effector'
 
-import * as routes from '@shared/routes'
+// import * as routes from '@shared/routes'
 
 import { requestInternalFx, Answer, Request } from './init'
 
+const authentificatedFailed = createEvent()
 export const tokenChanged = createEvent<string | null>()
 
 const setTokenFx = createEffect(setToken)
@@ -44,9 +45,14 @@ sample({
 
 sample({
   clock: authentificatedRequestFx.failData,
-  filter: (response) => response.status === 401,
-  target: routes.homeRoute.open,
+  filter: (res) => res.status === 401,
+  target: authentificatedFailed,
 })
+
+// sample({
+//   clock: authentificatedFailed,
+
+// })
 
 export { unathentificatedRequestFx, authentificatedRequestFx, getTokenFx }
 

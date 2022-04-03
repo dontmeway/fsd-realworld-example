@@ -25,6 +25,10 @@ export const routes = [
     route: signUpRoute,
   },
   {
+    path: '/article/:slug',
+    route: articleRoute,
+  },
+  {
     path: '/editor',
     route: createArticleRoute,
   },

@@ -110,3 +110,17 @@ export const userRequest = createEffect<void, types.UserRequestDone>({
     })
   },
 })
+
+export const articlesRequest = createEffect<void, types.ArticlesRequestDone>({
+  async handler() {
+    const name = 'articlesRequest.body'
+    const response = await unathentificatedRequestFx({
+      path: 'articles',
+      method: 'GET',
+    })
+
+    return parseByStatus(name, response, {
+      200: ['ok', contracts.articlesRequestOk],
+    })
+  },
+})

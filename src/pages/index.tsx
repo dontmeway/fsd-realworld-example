@@ -10,7 +10,8 @@ import { SignInPage } from './signin'
 import { SignUpPage } from './signup'
 import { ProfilePage } from './profile'
 import { SettingsPage } from './settings'
-import { CreateArticlePage } from './editor'
+import { CreateArticlePage, EditArticlePage } from './editor'
+import { ArticlePage } from './article'
 
 export const Routing = () => {
   return (
@@ -19,12 +20,13 @@ export const Routing = () => {
     </MainLayout>
   )
 }
-
 const PrivateRoutes = () => {
   return (
     <>
       <Route view={HomePage} route={routes.homeRoute} />
+      <Route view={ArticlePage} route={routes.articleRoute} />
       <Route view={CreateArticlePage} route={routes.createArticleRoute} />
+      <Route view={EditArticlePage} route={routes.editArticleRoute} />
       <Route view={SettingsPage} route={routes.settingsRoute} />
       <Route view={ProfilePage} route={routes.profileRoute} />
     </>
@@ -35,6 +37,7 @@ const PublicRoutes = () => {
   return (
     <>
       <Route view={HomePage} route={routes.homeRoute} />
+      <Route view={ArticlePage} route={routes.articleRoute} />
       <Route view={SignInPage} route={routes.signInRoute} />
       <Route view={SignUpPage} route={routes.signUpRoute} />
     </>

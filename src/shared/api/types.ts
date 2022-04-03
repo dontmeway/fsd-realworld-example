@@ -32,3 +32,8 @@ export type UserRequestDone = {
 }
 
 export type User = typed.Get<typeof contracts.user>
+export type Article = typed.Get<typeof contracts.article>
+export type ArticlesRequestDone = {
+  status: 'ok'
+  answer: typed.Get<typeof contracts.articlesRequestOk>
+}

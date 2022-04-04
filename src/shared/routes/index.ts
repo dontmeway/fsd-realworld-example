@@ -1,6 +1,6 @@
 import { createRoute } from 'atomic-router'
 
-export const homeRoute = createRoute()
+export const homeRoute = createRoute<{ tabIndex?: number }>()
 export const signInRoute = createRoute()
 export const signUpRoute = createRoute()
 export const createArticleRoute = createRoute()

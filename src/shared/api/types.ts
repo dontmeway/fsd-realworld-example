@@ -37,3 +37,12 @@ export type ArticlesRequestDone = {
   status: 'ok'
   answer: typed.Get<typeof contracts.articlesRequestOk>
 }
+
+export type ArticlesRequest = {
+  query?: string
+}
+
+export type ArticlesFeedRequestDone = {
+  status: 'ok'
+  answer: typed.Get<typeof contracts.articlesFeedRequestOk>
+}

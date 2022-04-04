@@ -1,4 +1,4 @@
-import { Text } from '@chakra-ui/react'
+import { Text, TextProps } from '@chakra-ui/react'
 
 type Props = {
   title: string
@@ -8,12 +8,13 @@ type Props = {
   border?: string
 }
 
-export const Tag: React.FC<Props> = ({
+export const Tag: React.FC<Props & TextProps> = ({
   onClick,
   title,
   bg = '#818a91',
   color = '#fff',
   border = 'none',
+  ...props
 }) => {
   return (
     <Text
@@ -24,7 +25,10 @@ export const Tag: React.FC<Props> = ({
       onClick={onClick}
       border={border}
       fontSize="10px"
+      mb="4px"
+      cursor="pointer"
       _notLast={{ mr: '5px' }}
+      {...props}
     >
       {title}
     </Text>

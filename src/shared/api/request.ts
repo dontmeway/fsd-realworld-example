@@ -111,16 +111,36 @@ export const userRequest = createEffect<void, types.UserRequestDone>({
   },
 })
 
-export const articlesRequest = createEffect<void, types.ArticlesRequestDone>({
-  async handler() {
+export const articlesRequest = createEffect<
+  types.ArticlesRequest,
+  types.ArticlesRequestDone
+>({
+  async handler({ query = '' }) {
     const name = 'articlesRequest.body'
     const response = await unathentificatedRequestFx({
-      path: 'articles',
+      path: `articles${query}`,
       method: 'GET',
     })
 
     return parseByStatus(name, response, {
       200: ['ok', contracts.articlesRequestOk],
+    })
+  },
+})
+
+export const articlesFeedRequest = createEffect<
+  void,
+  types.ArticlesFeedRequestDone
+>({
+  async handler() {
+    const name = 'articlesFeedRequest.body'
+    const response = await authentificatedRequestFx({
+      path: 'articles/feed',
+      method: 'GET',
+    })
+
+    return parseByStatus(name, response, {
+      200: ['ok', contracts.articlesFeedRequestOk],
     })
   },
 })

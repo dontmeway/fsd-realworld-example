@@ -1,4 +1,5 @@
-import { createStore } from 'effector'
+import { articleModel } from '@entities/article'
+import { createEvent, createStore, sample } from 'effector'
 
 const DEFAULT_TAGS = [
   'welcome',
@@ -7,4 +8,10 @@ const DEFAULT_TAGS = [
   'introduction',
 ]
 
+export const tagChanged = createEvent<string>()
+
 export const $tags = createStore(DEFAULT_TAGS)
+sample({
+  clock: tagChanged,
+  target: articleModel.tagChanged,
+})

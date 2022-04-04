@@ -42,3 +42,4 @@ export const articlesRequestOk = typed.object({
   articles: typed.array(article),
   articlesCount: typed.number,
 })
+export const articlesFeedRequestOk = articlesRequestOk

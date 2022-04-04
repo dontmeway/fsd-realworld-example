@@ -1,1 +1,1 @@
-export { $tags } from './model'
+export { $tags, tagChanged } from './model'

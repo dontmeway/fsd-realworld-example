@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Spinner } from '@chakra-ui/react'
 import { list, variant } from '@effector/reflect'
 
 import { SelectTags } from '@features/select-tags'
+import { LikeButton } from '@features/like-article'
 import { Tabs } from '@features/tabs'
 import { articleModel, ArticleRow } from '@entities/article'
 
@@ -19,11 +20,34 @@ export const TabPanel = () => {
   )
 }
 
+type Props = {
+  articleSlug: string
+  liked: boolean
+  likesCount: number
+}
+
+const Article: React.FC<Props> = ({ articleSlug, liked, likesCount }) => {
+  return (
+    <ArticleRow
+      articleSlug={articleSlug}
+      likeButton={
+        <LikeButton
+          articleSlug={articleSlug}
+          likesCount={likesCount}
+          liked={liked}
+        />
+      }
+    />
+  )
+}
+
 const Articles = list({
-  view: ArticleRow,
+  view: Article,
   source: articleModel.$articlesList,
   mapItem: {
-    slug: (article) => article.slug,
+    articleSlug: (article) => article.slug,
+    liked: (article) => article.favorited,
+    likesCount: (article) => article.favoritesCount,
   },
   getKey: (article) => article.slug,
 })

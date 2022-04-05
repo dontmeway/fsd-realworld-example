@@ -1,0 +1,1 @@
+export { likeButtonClicked } from './model'

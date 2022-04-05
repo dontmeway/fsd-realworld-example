@@ -6,4 +6,6 @@ export {
   tagChanged,
   $isLoading,
   getFeedArticles,
+  articleLiked,
+  articlesFavoriteFx,
 } from './model'

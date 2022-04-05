@@ -144,3 +144,19 @@ export const articlesFeedRequest = createEffect<
     })
   },
 })
+
+export const articlesFavoriteRequest = createEffect({
+  async handler(params: types.ArticlesFavoriteRequest) {
+    const path = `articles/${params.slug}/favorite`
+    const response = await authentificatedRequestFx({ path, method: 'POST' })
+    return response
+  },
+})
+
+export const articlesUnfavoriteRequest = createEffect({
+  async handler(params: types.ArticlesFavoriteRequest) {
+    const path = `articles/${params.slug}/favorite`
+    const response = await authentificatedRequestFx({ path, method: 'DELETE' })
+    return response
+  },
+})

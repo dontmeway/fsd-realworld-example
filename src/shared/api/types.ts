@@ -46,3 +46,7 @@ export type ArticlesFeedRequestDone = {
   status: 'ok'
   answer: typed.Get<typeof contracts.articlesFeedRequestOk>
 }
+
+export type ArticlesFavoriteRequest = {
+  slug: string
+}

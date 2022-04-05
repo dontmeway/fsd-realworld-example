@@ -25,6 +25,7 @@ export const View: React.FC<Props> = ({ isAuth, list, activeTag }) => {
       )}
       {list.map(({ label, value }) => (
         <Item
+          key={label}
           onClick={() => model.tabChanged(value)}
           isActive={value === activeTag}
         >

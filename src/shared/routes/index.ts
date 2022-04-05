@@ -1,4 +1,7 @@
 import { createRoute } from 'atomic-router'
+import { createBrowserHistory } from 'history'
+
+export const history = createBrowserHistory()
 
 export const homeRoute = createRoute<{ tabIndex?: number }>()
 export const signInRoute = createRoute()

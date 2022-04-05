@@ -1,9 +1,9 @@
-// export {
-//   loginRequestFx,
-//   registerRequestFx,
-//   $isAuthorized,
-//   $isLoading,
-//   $user,
-//   userRequestFx,
-// } from './model'
-export * from './model'
+export {
+  $isAuthorized,
+  $isLoading,
+  $user,
+  loginFx,
+  logout,
+  registerFx,
+  userFx,
+} from './model'

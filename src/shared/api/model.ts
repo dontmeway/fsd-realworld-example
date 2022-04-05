@@ -39,7 +39,7 @@ $token
   .on(getTokenFx.doneData, (_, payload) => payload)
 
 sample({
-  clock: [$token],
+  clock: $token,
   target: setTokenFx,
 })
 
@@ -54,7 +54,12 @@ sample({
 
 // })
 
-export { unathentificatedRequestFx, authentificatedRequestFx, getTokenFx }
+export {
+  unathentificatedRequestFx,
+  authentificatedRequestFx,
+  getTokenFx,
+  setTokenFx,
+}
 
 function setAuthorizationHeader(token: null | string) {
   return token ? { headers: { Authorization: `Bearer ${token}` } } : {}

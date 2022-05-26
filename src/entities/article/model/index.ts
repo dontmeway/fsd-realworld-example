@@ -8,4 +8,5 @@ export {
   getFeedArticles,
   articleLiked,
   articlesFavoriteFx,
+  articlesUnfavoriteFx,
 } from './model'

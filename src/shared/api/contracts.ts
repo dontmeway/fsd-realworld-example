@@ -3,7 +3,7 @@ import * as typed from 'typed-contracts'
 export const user = typed.object({
   email: typed.string,
   username: typed.string,
-  image: typed.string,
+  image: typed.union(typed.string, typed.nul),
   token: typed.string,
   bio: typed.union(typed.nul, typed.string),
 })
@@ -43,3 +43,11 @@ export const articlesRequestOk = typed.object({
   articlesCount: typed.number,
 })
 export const articlesFeedRequestOk = articlesRequestOk
+
+export const articlesFavoriteRequestOk = typed.object({
+  article,
+})
+
+export const articlesUnfavoriteRequestOk = typed.object({
+  article,
+})

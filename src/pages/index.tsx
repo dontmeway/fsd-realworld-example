@@ -50,7 +50,6 @@ const $isPrivate = userModel.$isAuthorized.map((is) =>
 
 const Routes = variant({
   source: $isPrivate,
-  bind: { isAuthorized: userModel.$isAuthorized },
   cases: {
     private: PrivateRoutes,
     public: PublicRoutes,

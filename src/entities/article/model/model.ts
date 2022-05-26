@@ -40,7 +40,13 @@ export const $isLoading = combine(
 )
 
 $articles
-  .on(articleLiked, (state, payload) => ({ ...state, [payload.slug]: payload }))
+  .on(
+    [articlesFavoriteFx.doneData, articlesUnfavoriteFx.doneData],
+    (state, payload) => ({
+      ...state,
+      [payload.answer.article.slug]: payload.answer.article,
+    })
+  )
   .on(articlesFx.doneData, (_, { answer }) => lib.normalizr(answer.articles))
   .on(articlesFeedFx.doneData, (_, { answer }) =>
     lib.normalizr(answer.articles)

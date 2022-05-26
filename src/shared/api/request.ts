@@ -39,7 +39,9 @@ function parseByStatus<
   const [status, contract] = contractObject
   const answer = contract(name, response.body)
   if (answer instanceof typed.ValidationError) {
-    throw { status: 'validation_error', error: answer }
+    const error = { status: 'validation_error', error: answer }
+    console.log(error)
+    throw error
   }
 
   if (response.status >= 400) {
@@ -147,16 +149,24 @@ export const articlesFeedRequest = createEffect<
 
 export const articlesFavoriteRequest = createEffect({
   async handler(params: types.ArticlesFavoriteRequest) {
+    const name = 'articlesFavoriteRequest.body'
     const path = `articles/${params.slug}/favorite`
     const response = await authentificatedRequestFx({ path, method: 'POST' })
-    return response
+
+    return parseByStatus(name, response, {
+      200: ['ok', contracts.articlesFavoriteRequestOk],
+    })
   },
 })
 
 export const articlesUnfavoriteRequest = createEffect({
   async handler(params: types.ArticlesFavoriteRequest) {
+    const name = 'articlesUnfavoriteRequest.body'
     const path = `articles/${params.slug}/favorite`
     const response = await authentificatedRequestFx({ path, method: 'DELETE' })
-    return response
+
+    return parseByStatus(name, response, {
+      200: ['ok', contracts.articlesUnfavoriteRequestOk],
+    })
   },
 })

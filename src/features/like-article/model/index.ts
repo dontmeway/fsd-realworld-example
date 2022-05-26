@@ -1,1 +1,5 @@
-export { likeButtonClicked } from './model'
+export {
+  likeButtonClicked,
+  $isLoading,
+  $lastModifiedArticleSlug,
+} from './model'

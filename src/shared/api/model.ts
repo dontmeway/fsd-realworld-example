@@ -67,6 +67,7 @@ function setAuthorizationHeader(token: null | string) {
 
 function setToken(token: string | null) {
   if (token) localStorage.setItem('fsd-token', token)
+  else localStorage.removeItem('fsd-token')
 }
 
 function getToken() {

@@ -13,7 +13,10 @@ export const ProfilePage = () => {
   const user = useStore(userModel.$user)
   return (
     <div>
-      <ProfileBanner username={user?.username} image={user?.image} />
+      <ProfileBanner
+        username={user?.username ?? null}
+        image={user?.image ?? null}
+      />
       <br />
       <Link params={{ slug: 'first1' }} to={routes.favoritesRoute}>
         go to favorites

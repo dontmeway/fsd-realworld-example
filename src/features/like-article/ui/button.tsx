@@ -16,9 +16,12 @@ export const Button: React.FC<Props> = ({ likesCount, articleSlug, liked }) => {
 
   return (
     <ChakraButton
+      color={liked ? 'red' : 'black'}
       isLoading={isLoading && articleSlug === slug}
       onClick={() => model.likeButtonClicked({ liked, slug: articleSlug })}
-      leftIcon={<Icon as={AiOutlineHeart} mr="10px" />}
+      leftIcon={
+        <Icon fill={liked ? 'red' : ''} as={AiOutlineHeart} mr="10px" />
+      }
       border="1px solid green"
     >
       {likesCount}

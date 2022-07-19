@@ -119,7 +119,7 @@ export const articlesRequest = createEffect<
 >({
   async handler({ query = '' }) {
     const name = 'articlesRequest.body'
-    const response = await unathentificatedRequestFx({
+    const response = await authentificatedRequestFx({
       path: `articles${query}`,
       method: 'GET',
     })

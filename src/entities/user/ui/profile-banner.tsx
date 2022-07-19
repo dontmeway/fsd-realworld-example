@@ -12,8 +12,8 @@ import { IoIosSettings } from 'react-icons/io'
 import * as routes from '@shared/routes'
 
 type Props = {
-  username: string | undefined
-  image: string | undefined
+  username: string | null
+  image: string | null
 }
 
 export const ProfileBanner: React.FC<Props> = ({ username, image }) => {
@@ -21,7 +21,7 @@ export const ProfileBanner: React.FC<Props> = ({ username, image }) => {
     <Flex bg="#f3f3f3" justify="center" align="center" py="40px" w="100%">
       <Container maxW="container.xl" textAlign="right">
         <Flex flexDir="column" align="center" mb="10px">
-          <Avatar src={image} mb="15px" size="2xl" />
+          <Avatar src={image ?? undefined} mb="15px" size="2xl" />
           <Heading>{username}</Heading>
         </Flex>
         <Link to={routes.settingsRoute}>
